@@ -1,12 +1,36 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Roboto", system-ui;
+    font-weight: 900;
+    font-style: normal;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 header {
-    background-color: #333;
+    font-family: "Roboto", system-ui;
+    font-weight: 700;
+    font-style: normal;
+    width: 100%;
+    height: 100%;
+    --s: 200px;
+    --c1: #1d1d1d;
+    --c2: #4e4f51;
+    --c3: #3c3c3c;
+  
+    background: repeating-conic-gradient(
+          from 30deg,
+          #0000 0 120deg,
+          var(--c3) 0 180deg
+        )
+        calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+      repeating-conic-gradient(
+        from 30deg,
+        var(--c1) 0 60deg,
+        var(--c2) 0 120deg,
+        var(--c3) 0 180deg
+      );
+    background-size: var(--s) calc(var(--s) * 0.577);
     color: #fff;
     text-align: center;
     padding: 50px 20px;
@@ -42,7 +66,7 @@ body {
     display: grid;
     grid-template-areas: 
         "header"
-        "sobre-mi"
+        "sobremi"
         "proyectos"
         "contacto"
         "footer";
@@ -50,30 +74,7 @@ body {
     grid-gap: 20px;
 }
 
-header {
-    grid-area: header;
-}
 
-.sobre-mi {
-    grid-area: sobre-mi;
-    background-color: #f4f4f4;
-}
-
-.proyectos {
-    grid-area: proyectos;
-}
-
-.contacto {
-    grid-area: contacto;
-}
-
-footer {
-    grid-area: footer;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
 
 .grid-proyectos {
     display: grid;
@@ -114,7 +115,38 @@ footer {
 }
 
 .contacto p {
+    font-family: "Roboto", system-ui;
+    font-weight: 700;
+    font-style: italic;
     text-align: center;
+}
+
+
+header {
+    grid-area: header;
+}
+
+.sobremi {
+    grid-area: sobremi;
+    background-color: #292929;
+    color: aliceblue;
+    border-radius: 10px;
+}
+
+.proyectos {
+    grid-area: proyectos;
+}
+
+.contacto {
+    grid-area: contacto;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
 @media (max-width: 600px) {
