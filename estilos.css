@@ -1,0 +1,144 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+section {
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "sobre-mi"
+        "proyectos"
+        "contacto"
+        "footer";
+    grid-template-rows: auto 1fr auto auto auto;
+    grid-gap: 20px;
+}
+
+header {
+    grid-area: header;
+}
+
+.sobre-mi {
+    grid-area: sobre-mi;
+    background-color: #f4f4f4;
+}
+
+.proyectos {
+    grid-area: proyectos;
+}
+
+.contacto {
+    grid-area: contacto;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-proyectos article {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.grid-proyectos img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.grid-proyectos h3 {
+    margin: 10px 0;
+}
+
+.grid-proyectos a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.grid-proyectos a:hover {
+    background-color: #0056b3;
+}
+
+.contacto p {
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .grid-proyectos {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .grid-proyectos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .grid-proyectos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
